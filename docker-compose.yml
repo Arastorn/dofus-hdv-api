@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: practice-api-dev
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: practice
+    ports:
+      - 5432:5432
+
+  db_migration:
+    build:
+      context: ./src/
+      dockerfile: Dockerfile
+      target: runtime-db-migration
+    image: practice-api:latest-db-migration
+    entrypoint: tail -f /dev/null
+    depends_on:
+      - db
+    env_file:
+      - src/Practice.Api/.env
+    environment:
+      ConnectionStrings__PracticeDatabase: "User ID =practice-api-dev;Password=password;Server=db;Port=5432;Database=practice;Pooling=true;"
+
+  api:
+    build:
+      context: ./src/
+      dockerfile: Dockerfile
+      target: runtime
+    image: practice-api:latest
+    depends_on:
+      - db
+    ports:
+      - 8080:80
+    env_file:
+      - src/Practice.Api/.env
+    environment:
+      ConnectionStrings__PracticeDatabase: "User ID =practice-api-dev;Password=password;Server=db;Port=5432;Database=practice;Pooling=true;"
