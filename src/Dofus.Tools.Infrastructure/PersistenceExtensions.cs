@@ -1,15 +1,15 @@
 ﻿using System.Data;
 using Autofac;
 using Dapper;
-using Dofus.Hdv.Infrastructure.Data;
-using Dofus.Hdv.Infrastructure.Data.Handlers;
+using Dofus.Tools.Infrastructure.Data;
+using Dofus.Tools.Infrastructure.Data.Handlers;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using NodaTime;
 using NodaTime.Serialization.JsonNet;
 using Npgsql;
 
-namespace Dofus.Hdv.Infrastructure
+namespace Dofus.Tools.Infrastructure
 {
     public static class PersistenceExtensions
     {

@@ -1,7 +1,7 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using Dofus.Hdv.Api.Modules;
-using Dofus.Hdv.Infrastructure;
+using Dofus.Tools.Api.Modules;
+using Dofus.Tools.Infrastructure;
 using Serilog;
 
 var configuration = new ConfigurationBuilder()

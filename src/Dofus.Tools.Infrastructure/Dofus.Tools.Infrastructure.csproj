@@ -9,7 +9,6 @@
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <CodeAnalysisRuleSet>../../Dofus.ruleset</CodeAnalysisRuleSet>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-        <RootNamespace>Dofus.Hdv.Infrastructure</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

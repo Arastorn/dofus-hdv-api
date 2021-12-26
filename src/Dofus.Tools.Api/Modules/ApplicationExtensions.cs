@@ -1,9 +1,9 @@
 ﻿using Autofac;
-using Dofus.Hdv.Core.Features.Commands;
+using Dofus.Tools.Core.Features.Commands;
 using MediatR;
 using NodaTime;
 
-namespace Dofus.Hdv.Api.Modules
+namespace Dofus.Tools.Api.Modules
 {
     public static class ApplicationExtensions
     {

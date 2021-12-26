@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Practice.DbMigration.Migrations;
 
-namespace Dofus.Hdv.DbMigration
+namespace Dofus.Tools.DbMigration
 {
     internal class Program
     {

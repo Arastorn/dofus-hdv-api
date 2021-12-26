@@ -1,8 +1,8 @@
-﻿using Dofus.Hdv.Core.Aggregates.PricesAggregate;
-using Dofus.Hdv.Core.Interfaces;
+﻿using Dofus.Tools.Core.Aggregates.PricesAggregate;
+using Dofus.Tools.Core.Interfaces;
 using MediatR;
 
-namespace Dofus.Hdv.Core.Features.Commands;
+namespace Dofus.Tools.Core.Features.Commands;
 
 public class CreatePriceCommandHandler : IRequestHandler<CreatePriceCommand>
 {

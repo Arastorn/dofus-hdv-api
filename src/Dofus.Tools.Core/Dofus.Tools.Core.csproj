@@ -9,7 +9,6 @@
         <CodeAnalysisRuleSet>../../Dofus.ruleset</CodeAnalysisRuleSet>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-        <RootNamespace>Dofus.Hdv.Core</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
