@@ -9,6 +9,7 @@
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <CodeAnalysisRuleSet>../../Dofus.ruleset</CodeAnalysisRuleSet>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <RootNamespace>Dofus.Hdv.Infrastructure</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -32,7 +33,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Dofus.Hdv.Core\Dofus.Hdv.Core.csproj" />
+      <ProjectReference Include="..\Dofus.Tools.Core\Dofus.Tools.Core.csproj" />
     </ItemGroup>
 
     <PropertyGroup>

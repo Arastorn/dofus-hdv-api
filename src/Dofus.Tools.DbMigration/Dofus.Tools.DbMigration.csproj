@@ -9,6 +9,7 @@
         <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
         <CodeAnalysisRuleSet>../../Dofus.ruleset</CodeAnalysisRuleSet>
         <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
+        <RootNamespace>Dofus.Hdv.DbMigration</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
