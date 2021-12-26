@@ -1,6 +1,6 @@
 ﻿using NodaTime;
 
-namespace Dofus.Hdv.Core.Aggregates.PricesAggregate;
+namespace Dofus.Tools.Core.Aggregates.PricesAggregate;
 
 public class Price
 {

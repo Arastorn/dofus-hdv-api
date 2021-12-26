@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using NodaTime;
 
-namespace Dofus.Hdv.Core.Features.Commands;
+namespace Dofus.Tools.Core.Features.Commands;
 
 public record CreatePriceCommand(
     long DofusId,

@@ -2,7 +2,7 @@
 using Dapper;
 using NodaTime;
 
-namespace Dofus.Hdv.Infrastructure.Data.Handlers
+namespace Dofus.Tools.Infrastructure.Data.Handlers
 {
     public class InstantHandler : SqlMapper.TypeHandler<Instant?>
     {

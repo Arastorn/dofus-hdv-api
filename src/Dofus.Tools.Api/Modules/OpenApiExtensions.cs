@@ -3,7 +3,7 @@ using Microsoft.OpenApi.Models;
 using NodaTime;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Dofus.Hdv.Api.Modules
+namespace Dofus.Tools.Api.Modules
 {
     public static class OpenApiExtensions
     {

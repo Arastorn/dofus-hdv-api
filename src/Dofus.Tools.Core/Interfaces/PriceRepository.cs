@@ -1,6 +1,6 @@
-﻿using Dofus.Hdv.Core.Aggregates.PricesAggregate;
+﻿using Dofus.Tools.Core.Aggregates.PricesAggregate;
 
-namespace Dofus.Hdv.Core.Interfaces;
+namespace Dofus.Tools.Core.Interfaces;
 
 public interface PriceRepository
 {

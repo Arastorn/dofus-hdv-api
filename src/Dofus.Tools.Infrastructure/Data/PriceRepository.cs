@@ -1,8 +1,8 @@
 ﻿using System.Data;
 using Dapper;
-using Dofus.Hdv.Core.Aggregates.PricesAggregate;
+using Dofus.Tools.Core.Aggregates.PricesAggregate;
 
-namespace Dofus.Hdv.Infrastructure.Data
+namespace Dofus.Tools.Infrastructure.Data
 {
     public class PriceRepository : Core.Interfaces.PriceRepository
     {

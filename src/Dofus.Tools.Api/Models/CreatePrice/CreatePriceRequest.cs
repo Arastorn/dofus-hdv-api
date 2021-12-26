@@ -1,6 +1,6 @@
 ﻿using NodaTime;
 
-namespace Dofus.Hdv.Api.Models.CreatePrice;
+namespace Dofus.Tools.Api.Models.CreatePrice;
 
 public record CreatePriceRequest(
     long DofusId,

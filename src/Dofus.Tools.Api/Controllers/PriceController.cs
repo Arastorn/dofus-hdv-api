@@ -1,9 +1,9 @@
-﻿using Dofus.Hdv.Api.Models.CreatePrice;
-using Dofus.Hdv.Core.Features.Commands;
+﻿using Dofus.Tools.Api.Models.CreatePrice;
+using Dofus.Tools.Core.Features.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Dofus.Hdv.Api.Controllers;
+namespace Dofus.Tools.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]

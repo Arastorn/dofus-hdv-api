@@ -6,17 +6,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configura
 		docker-compose.yml = docker-compose.yml
 		stylecop.json = stylecop.json
 		Dofus.ruleset = Dofus.ruleset
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0120E9DA-6952-45E6-9F75-B2EC32F7FE2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dofus.Hdv.Api", "src\Dofus.Hdv.Api\Dofus.Hdv.Api.csproj", "{3A51ADA5-2C5B-4774-8104-094B69B1D5BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dofus.Tools.Api", "src\Dofus.Tools.Api\Dofus.Tools.Api.csproj", "{3A51ADA5-2C5B-4774-8104-094B69B1D5BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dofus.Hdv.Core", "src\Dofus.Hdv.Core\Dofus.Hdv.Core.csproj", "{D7E8885C-CFA4-4A0D-B74A-DBF715478AF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dofus.Tools.Core", "src\Dofus.Tools.Core\Dofus.Tools.Core.csproj", "{D7E8885C-CFA4-4A0D-B74A-DBF715478AF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dofus.Hdv.Infrastructure", "src\Dofus.Hdv.Infrastructure\Dofus.Hdv.Infrastructure.csproj", "{ED421FA6-46C5-4931-B0A6-03E18D7A129D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dofus.Tools.Infrastructure", "src\Dofus.Tools.Infrastructure\Dofus.Tools.Infrastructure.csproj", "{ED421FA6-46C5-4931-B0A6-03E18D7A129D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dofus.Hdv.DbMigration", "src\Dofus.Hdv.DbMigration\Dofus.Hdv.DbMigration.csproj", "{7ED72E81-DE73-4658-BDA5-48293DA72620}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dofus.Tools.DbMigration", "src\Dofus.Tools.DbMigration\Dofus.Tools.DbMigration.csproj", "{7ED72E81-DE73-4658-BDA5-48293DA72620}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

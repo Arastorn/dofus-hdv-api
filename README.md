@@ -1,1 +1,1 @@
-# dofus-hdv-api
+# dofus-tools-api
