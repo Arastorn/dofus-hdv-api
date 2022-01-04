@@ -38,7 +38,7 @@ jobs:
           target: test
       -
         name: publish application
-        # Develop branch only
+        # Main branch only
         if: github.ref == 'refs/heads/main'
         uses: docker/build-push-action@v2
         with:
