@@ -18,4 +18,12 @@ public class CrushRepository : BaseRepository, Core.Interfaces.CrushRepository
                       VALUES (@id, @DofusId, @ServerId, @Value, @CreatedAt, @CreatedBy);",
             crush);
     }
+
+    public async Task<Crush[]> GetCrushesByIds(long dofusId, short serverId, CancellationToken cancellationToken = default)
+    {
+        await using var connection = GetConnection();
+        return (await connection.QueryAsync<Crush>(
+            @"SELECT * FROM crushes WHERE dofus_id = @DofusId AND server_id = @ServerId",
+            new { DofusId = dofusId, ServerId = serverId })).ToArray();
+    }
 }
