@@ -10,7 +10,8 @@ namespace Practice.DbMigration.Migrations
             Execute.Script("InstallExtension.sql");
 
             Create.Table("prices")
-                .WithColumn("dofus_id").AsInt64().PrimaryKey()
+                .WithColumn("id").AsGuid().PrimaryKey()
+                .WithColumn("dofus_id").AsInt64().Indexed()
                 .WithColumn("server_id").AsInt16().NotNullable().Indexed()
                 .WithColumn("value").AsInt64().NotNullable()
                 .WithColumn("created_at").AsDateTimeOffset().NotNullable().Indexed()
