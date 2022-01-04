@@ -4,7 +4,6 @@ namespace Dofus.Tools.Api.Models.CreatePrice;
 
 public record CreatePriceRequest(
     long DofusId,
-    long ServerId,
+    short ServerId,
     long Value,
-    Instant CreatedAt,
     string CreatedBy);

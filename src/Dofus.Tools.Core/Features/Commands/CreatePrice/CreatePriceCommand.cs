@@ -1,11 +1,10 @@
 ﻿using MediatR;
 using NodaTime;
 
-namespace Dofus.Tools.Core.Features.Commands;
+namespace Dofus.Tools.Core.Features.Commands.CreatePrice;
 
 public record CreatePriceCommand(
     long DofusId,
-    long ServerId,
+    short ServerId,
     long Value,
-    Instant CreatedAt,
     string CreatedBy) : IRequest;
