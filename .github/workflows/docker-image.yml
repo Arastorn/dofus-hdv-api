@@ -14,5 +14,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build -f src/Dockerfile .
+    - name: Build Application
+      run: docker build -t dofus-tools-api-ci -f src/Dockerfile . --target build
+      
+    - uses: actions/checkout@v2
+    - name: Test Application
+      run: docker build -t dofus-tools-api-ci-test -f src/Dockerfile . --target test
+
