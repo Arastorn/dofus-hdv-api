@@ -30,7 +30,7 @@ services:
     depends_on:
       - db
     ports:
-      - 8080:80
+      - "5004:80"
     env_file:
       - src/Dofus.Tools.Api/.env
     environment:
