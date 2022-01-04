@@ -7,7 +7,7 @@
         <Nullable>enable</Nullable>
         <EnableNetAnalyzers>true</EnableNetAnalyzers>
         <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
-        <CodeAnalysisRuleSet>../../Dofus.ruleset</CodeAnalysisRuleSet>
+        <CodeAnalysisRuleSet>../Dofus.ruleset</CodeAnalysisRuleSet>
         <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
     </PropertyGroup>
 
@@ -15,15 +15,11 @@
         <PackageReference Include="FluentMigrator" Version="3.3.1" />
         <PackageReference Include="FluentMigrator.Runner" Version="3.3.1" />
         <PackageReference Include="FluentMigrator.Runner.Postgres" Version="3.3.1" />
-        <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.2">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
         <PackageReference Include="Npgsql" Version="6.0.2" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205" />
-        <AdditionalFiles Include="../../stylecop.json" />
+        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.376" />
+        <AdditionalFiles Include="../stylecop.json" />
     </ItemGroup>
     <ItemGroup>
         <None Update="InstallExtension.sql">

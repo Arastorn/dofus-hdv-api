@@ -1,7 +1,10 @@
+using System.Text.Json.Serialization;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Dofus.Tools.Api.Modules;
 using Dofus.Tools.Infrastructure;
+using NodaTime;
+using NodaTime.Serialization.SystemTextJson;
 using Serilog;
 
 var configuration = new ConfigurationBuilder()
@@ -25,15 +28,21 @@ Log.Logger = new LoggerConfiguration()
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services
+   .AddControllers()
+   .AddJsonOptions(options =>
+   {
+      options.JsonSerializerOptions.ConfigureForNodaTime(DateTimeZoneProviders.Tzdb);
+      options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+   });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
-builder.Services.AddPersistence(Environment.GetEnvironmentVariable("ConnectionStrings__AppDatabase")!);
+builder.Services.AddPersistence();
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(b =>
 {
    b.RegisterUseCases(configuration);
-   b.RegisterPersistence();
+   b.RegisterPersistence(Environment.GetEnvironmentVariable("ConnectionStrings__AppDatabase") ?? string.Empty);
 });
 
 var app = builder.Build();

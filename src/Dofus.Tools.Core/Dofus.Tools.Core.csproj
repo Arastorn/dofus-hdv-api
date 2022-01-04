@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
         <EnableNetAnalyzers>true</EnableNetAnalyzers>
         <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
-        <CodeAnalysisRuleSet>../../Dofus.ruleset</CodeAnalysisRuleSet>
+        <CodeAnalysisRuleSet>../Dofus.ruleset</CodeAnalysisRuleSet>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
@@ -17,8 +17,8 @@
 
     <ItemGroup>
         <PackageReference Include="NodaTime" Version="3.0.9" />
-        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321" />
-        <AdditionalFiles Include="../../stylecop.json" />
+        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.376"/>
+        <AdditionalFiles Include="../stylecop.json" />
     </ItemGroup>
 
     <PropertyGroup>

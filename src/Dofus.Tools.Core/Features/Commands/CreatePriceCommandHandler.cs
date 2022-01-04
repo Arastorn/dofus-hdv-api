@@ -13,9 +13,9 @@ public class CreatePriceCommandHandler : IRequestHandler<CreatePriceCommand>
         this.priceRepository = priceRepository;
     }
 
-    public Task<Unit> Handle(CreatePriceCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(CreatePriceCommand request, CancellationToken cancellationToken)
     {
-        priceRepository.Create(
+        await priceRepository.Create(
             Price.Create(
                 request.DofusId,
                 request.ServerId,
@@ -24,6 +24,6 @@ public class CreatePriceCommandHandler : IRequestHandler<CreatePriceCommand>
                 request.CreatedBy),
             cancellationToken);
 
-        return Unit.Task;
+        return Unit.Value;
     }
 }

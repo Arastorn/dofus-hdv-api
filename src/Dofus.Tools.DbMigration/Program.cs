@@ -25,7 +25,7 @@ namespace Dofus.Tools.DbMigration
             .AddFluentMigratorCore()
             .ConfigureRunner(rb => rb
                 .AddPostgres()
-                .WithGlobalConnectionString(Environment.GetEnvironmentVariable("ConnectionStrings__PracticeDatabase"))
+                .WithGlobalConnectionString(Environment.GetEnvironmentVariable("ConnectionStrings__AppDatabase"))
                 .ScanIn(typeof(InitDb).Assembly).For.Migrations())
             .AddLogging(lb => lb.AddFluentMigratorConsole())
             .BuildServiceProvider(false);

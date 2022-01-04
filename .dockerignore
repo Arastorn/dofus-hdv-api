@@ -1,0 +1,64 @@
+Dockerfile
+.dockerignore
+docker-compose.yml
+.env
+.env.exemple
+appsettings.Development.json
+.docker/
+bin/
+obj/
+out/
+TestResults/
+
+**/.env
+**/.env.exemple
+**/appsettings.Development.json
+
+# Created by .ignore support plugin (hsz.mobi)
+### macOS template
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# directories
+.ionide/
+.idea/
+.vs/
+.vscode/
+.git/
+.circleci/
+.github/
+
+**/bin/
+**/obj/
+**/TestResults/
+**/out/
+out/
+TestResults/
+
+# files
+Dockerfile*
+**/*.md

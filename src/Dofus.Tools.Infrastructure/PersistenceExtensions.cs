@@ -13,21 +13,19 @@ namespace Dofus.Tools.Infrastructure
 {
     public static class PersistenceExtensions
     {
-        public static IServiceCollection AddPersistence(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddPersistence(this IServiceCollection services)
         {
             NpgsqlConnection.GlobalTypeMapper.UseJsonNet(settings: new JsonSerializerSettings().ConfigureForNodaTime(DateTimeZoneProviders.Tzdb));
             DefaultTypeMap.MatchNamesWithUnderscores = true;
-
-            services.AddTransient<IDbConnection>(c => new NpgsqlConnection(connectionString));
 
             SqlMapper.AddTypeHandler(new InstantHandler());
 
             return services;
         }
 
-        public static ContainerBuilder RegisterPersistence(this ContainerBuilder builder)
+        public static ContainerBuilder RegisterPersistence(this ContainerBuilder builder, string connectionString)
         {
-            builder.RegisterType<PriceRepository>().As<Core.Interfaces.PriceRepository>();
+            builder.Register(c => new PriceRepository(connectionString)).As<Core.Interfaces.PriceRepository>();
 
             return builder;
         }

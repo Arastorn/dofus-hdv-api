@@ -7,7 +7,7 @@
         <EnableNetAnalyzers>true</EnableNetAnalyzers>
         <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-        <CodeAnalysisRuleSet>../../Dofus.ruleset</CodeAnalysisRuleSet>
+        <CodeAnalysisRuleSet>../Dofus.ruleset</CodeAnalysisRuleSet>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
 
@@ -24,8 +24,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321" />
-        <AdditionalFiles Include="../../stylecop.json" />
+        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.376" />
+        <AdditionalFiles Include="../stylecop.json" />
     </ItemGroup>
 
     <ItemGroup>

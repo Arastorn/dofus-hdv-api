@@ -4,20 +4,19 @@ using Dofus.Tools.Core.Aggregates.PricesAggregate;
 
 namespace Dofus.Tools.Infrastructure.Data
 {
-    public class PriceRepository : Core.Interfaces.PriceRepository
+    public class PriceRepository : BaseRepository, Core.Interfaces.PriceRepository
     {
-        private readonly IDbConnection connection;
-
-        public PriceRepository(IDbConnection connection)
+        public PriceRepository(string connectionString)
+            : base(connectionString)
         {
-            this.connection = connection;
         }
 
         public async Task Create(Price price, CancellationToken cancellationToken = default)
         {
-             await connection.ExecuteScalarAsync(
+            await using var connection = GetConnection();
+            await connection.ExecuteScalarAsync(
                 @"INSERT INTO prices(dofus_id, server_id, value, created_at, created_by) 
-                      VALUES (@DofusId, @ServerId, @CreatedAt, @CreatedBy);",
+                      VALUES (@DofusId, @ServerId, @Value, @CreatedAt, @CreatedBy);",
                 price);
         }
     }

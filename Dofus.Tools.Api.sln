@@ -2,11 +2,13 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{DF2C45A8-E00B-405B-90C7-0A2C01DC5495}"
 	ProjectSection(SolutionItems) = preProject
-		Dockerfile = Dockerfile
 		docker-compose.yml = docker-compose.yml
-		stylecop.json = stylecop.json
-		Dofus.ruleset = Dofus.ruleset
+		stylecop.json = src\stylecop.json
+		Dofus.ruleset = src\Dofus.ruleset
 		README.md = README.md
+		Dockerfile = src\Dockerfile
+		nuget.config = nuget.config
+		.dockerignore = .dockerignore
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0120E9DA-6952-45E6-9F75-B2EC32F7FE2E}"

@@ -7,28 +7,20 @@
         <EnableNetAnalyzers>true</EnableNetAnalyzers>
         <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-        <CodeAnalysisRuleSet>../../Dofus.ruleset</CodeAnalysisRuleSet>
+        <CodeAnalysisRuleSet>../Dofus.ruleset</CodeAnalysisRuleSet>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Autofac" Version="6.3.0" />
         <PackageReference Include="Dapper" Version="2.0.123" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
         <PackageReference Include="NodaTime" Version="3.0.9" />
         <PackageReference Include="NodaTime.Serialization.JsonNet" Version="3.0.0" />
         <PackageReference Include="Npgsql" Version="6.0.2" />
         <PackageReference Include="Npgsql.Json.NET" Version="6.0.2" />
-        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321" />
-        <AdditionalFiles Include="../../stylecop.json" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-            <HintPath>C:\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\5.0.0\ref\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
-        </Reference>
-        <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-          <HintPath>C:\Users\Arastorn\.dotnet\shared\Microsoft.AspNetCore.App\6.0.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
-        </Reference>
+        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.376" />
+        <AdditionalFiles Include="../stylecop.json" />
     </ItemGroup>
 
     <ItemGroup>
