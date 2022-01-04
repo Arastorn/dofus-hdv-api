@@ -1,5 +1,5 @@
-﻿using Dofus.Tools.Api.Models.CreatePrice;
-using Dofus.Tools.Api.Models.GetPricesByDofusId;
+﻿using Dofus.Tools.Api.Models.Prices.CreatePrice;
+using Dofus.Tools.Api.Models.Prices.GetPricesByDofusId;
 using Dofus.Tools.Core.Features.Commands.CreatePrice;
 using Dofus.Tools.Core.Features.Queries.GetPricesByDofusId;
 using MediatR;
@@ -55,6 +55,6 @@ public class PriceController : ControllerBase
         logger.LogInformation("A request to get prices started");
         var prices = await mediator.Send(new GetPricesByDofusIdQuery(dofusId, serverId));
 
-        return Ok(prices);
+        return Ok(prices.Select(p => (GetPricesByDofusIdResponse)p));
     }
 }

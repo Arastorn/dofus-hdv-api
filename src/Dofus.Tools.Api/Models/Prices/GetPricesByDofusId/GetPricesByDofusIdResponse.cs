@@ -1,7 +1,7 @@
 ﻿using Dofus.Tools.Core.Aggregates.PricesAggregate;
 using NodaTime;
 
-namespace Dofus.Tools.Api.Models.GetPricesByDofusId;
+namespace Dofus.Tools.Api.Models.Prices.GetPricesByDofusId;
 
 public record GetPricesByDofusIdResponse(Guid Id, long DofusId, long ServerId, long Value, Instant CreatedAt, string CreatedBy)
 {
