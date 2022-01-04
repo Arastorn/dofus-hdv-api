@@ -1,5 +1,7 @@
 ﻿using Autofac;
 using Dofus.Tools.Core.Features.Commands;
+using Dofus.Tools.Core.Features.Commands.CreatePrice;
+using Dofus.Tools.Core.Features.Queries.GetPricesByDofusId;
 using MediatR;
 using NodaTime;
 
@@ -37,6 +39,7 @@ namespace Dofus.Tools.Api.Modules
             });
 
             builder.RegisterType<CreatePriceCommandHandler>().AsImplementedInterfaces();
+            builder.RegisterType<GetPricesByDofusIdQueryHandler>().AsImplementedInterfaces();
 
             return builder;
         }

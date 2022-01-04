@@ -1,5 +1,7 @@
 ﻿using Dofus.Tools.Api.Models.CreatePrice;
-using Dofus.Tools.Core.Features.Commands;
+using Dofus.Tools.Api.Models.GetPricesByDofusId;
+using Dofus.Tools.Core.Features.Commands.CreatePrice;
+using Dofus.Tools.Core.Features.Queries.GetPricesByDofusId;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,17 +28,33 @@ public class PriceController : ControllerBase
     /// <response code="204"> </response>
     [HttpPost(Name = "CreatePrice")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<IActionResult> CreateDigimon(CreatePriceRequest request)
+    public async Task<IActionResult> CreatePrice(CreatePriceRequest request)
     {
-        logger.LogInformation("A request to create a digimon started");
+        logger.LogInformation("A request to create a price started");
 
         await mediator.Send(new CreatePriceCommand(
             request.DofusId,
             request.ServerId,
             request.Value,
-            request.CreatedAt,
             request.CreatedBy));
 
         return Ok();
+    }
+
+    /// <summary>
+    ///    récupère tout les prix associé a un id dofus
+    /// </summary>
+    /// <param name="dofusId"> Id de l'item dofus dont on veut récupérer le prix</param>
+    /// <param name="serverId"> Le serveur associé dont on veut récupérer les prix</param>
+    /// <returns> ok. </returns>
+    /// <response code="200"> Tout les prix étant associé a l'item en question</response>
+    [HttpGet(Name = "GetPrices")]
+    [ProducesResponseType(typeof(GetPricesByDofusIdResponse[]), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPrices([FromQuery] int dofusId, [FromQuery] short serverId)
+    {
+        logger.LogInformation("A request to get prices started");
+        var prices = await mediator.Send(new GetPricesByDofusIdQuery(dofusId, serverId));
+
+        return Ok(prices);
     }
 }
