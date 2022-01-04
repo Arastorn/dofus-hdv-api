@@ -9,7 +9,7 @@ public class CreateCrushCommandHandler : IRequestHandler<CreateCrushCommand>
 {
     private readonly IClock clock;
     private readonly CrushRepository crushRepository;
-    
+
     public CreateCrushCommandHandler(IClock clock, CrushRepository crushRepository)
     {
         this.clock = clock;
@@ -18,7 +18,8 @@ public class CreateCrushCommandHandler : IRequestHandler<CreateCrushCommand>
 
     public async Task<Unit> Handle(CreateCrushCommand request, CancellationToken cancellationToken)
     {
-        await crushRepository.Create(Crush.Create(
+        await crushRepository.Create(
+            Crush.Create(
                 request.DofusId,
                 request.ServerId,
                 request.Value,

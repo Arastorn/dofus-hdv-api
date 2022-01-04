@@ -1,4 +1,5 @@
 ﻿using Dofus.Tools.Api.Models.Crushes.CreateCrush;
+using Dofus.Tools.Core.Features.Commands.CreateCrush;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,13 +24,17 @@ public class CrushController : ControllerBase
     /// <param name="request"> les informations nécessaire a la création d'un brisage.</param>
     /// <returns> ok. </returns>
     /// <response code="204"> </response>
-    [HttpPost(Name = "CreatePrice")]
+    [HttpPost(Name = "CreateCrush")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public async Task<IActionResult> CreatePrice(CreateCrushRequest request)
+    public async Task<IActionResult> CreateCrush(CreateCrushRequest request)
     {
         logger.LogInformation("A request to create a price started");
 
-        await Task.CompletedTask;
+        await mediator.Send(new CreateCrushCommand(
+            request.DofusId,
+            request.ServerId,
+            request.Value,
+            request.CreatedBy));
 
         return Ok();
     }

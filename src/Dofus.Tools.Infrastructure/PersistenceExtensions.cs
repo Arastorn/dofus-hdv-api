@@ -26,6 +26,7 @@ namespace Dofus.Tools.Infrastructure
         public static ContainerBuilder RegisterPersistence(this ContainerBuilder builder, string connectionString)
         {
             builder.Register(c => new PriceRepository(connectionString)).As<Core.Interfaces.PriceRepository>();
+            builder.Register(c => new CrushRepository(connectionString)).As<Core.Interfaces.CrushRepository>();
 
             return builder;
         }
