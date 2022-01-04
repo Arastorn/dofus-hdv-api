@@ -11,7 +11,7 @@ namespace Dofus.Tools.Api.Modules
         {
             var versions = new Dictionary<string, OpenApiInfo>
             {
-                { "v1", new OpenApiInfo { Title = "Dofus HDV API", Version = "1" } }
+                { "v1", new OpenApiInfo { Title = "Dofus Tools API", Version = "1" } }
             };
 
             SwaggerGenOptions MapOption(SwaggerGenOptions options)

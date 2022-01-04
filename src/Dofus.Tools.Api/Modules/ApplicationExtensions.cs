@@ -2,7 +2,8 @@
 using Dofus.Tools.Core.Features.Commands;
 using Dofus.Tools.Core.Features.Commands.CreateCrush;
 using Dofus.Tools.Core.Features.Commands.CreatePrice;
-using Dofus.Tools.Core.Features.Queries.GetPricesByDofusId;
+using Dofus.Tools.Core.Features.Queries.GetCrushesByIds;
+using Dofus.Tools.Core.Features.Queries.GetPricesByIds;
 using MediatR;
 using NodaTime;
 
@@ -41,7 +42,8 @@ namespace Dofus.Tools.Api.Modules
 
             builder.RegisterType<CreatePriceCommandHandler>().AsImplementedInterfaces();
             builder.RegisterType<CreateCrushCommandHandler>().AsImplementedInterfaces();
-            builder.RegisterType<GetPricesByDofusIdQueryHandler>().AsImplementedInterfaces();
+            builder.RegisterType<GetPricesByIdsQueryHandler>().AsImplementedInterfaces();
+            builder.RegisterType<GetCrushesByIdsQueryHandler>().AsImplementedInterfaces();
 
             return builder;
         }

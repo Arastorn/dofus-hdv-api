@@ -1,7 +1,7 @@
 ﻿using Dofus.Tools.Api.Models.Prices.CreatePrice;
-using Dofus.Tools.Api.Models.Prices.GetPricesByDofusId;
+using Dofus.Tools.Api.Models.Prices.GetPricesByIds;
 using Dofus.Tools.Core.Features.Commands.CreatePrice;
-using Dofus.Tools.Core.Features.Queries.GetPricesByDofusId;
+using Dofus.Tools.Core.Features.Queries.GetPricesByIds;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -49,12 +49,12 @@ public class PriceController : ControllerBase
     /// <returns> ok. </returns>
     /// <response code="200"> Tout les prix étant associé a l'item en question</response>
     [HttpGet(Name = "GetPrices")]
-    [ProducesResponseType(typeof(GetPricesByDofusIdResponse[]), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(GetPricesByIdsResponse[]), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPrices([FromQuery] int dofusId, [FromQuery] short serverId)
     {
         logger.LogInformation("A request to get prices started");
-        var prices = await mediator.Send(new GetPricesByDofusIdQuery(dofusId, serverId));
+        var prices = await mediator.Send(new GetPricesByIdsQuery(dofusId, serverId));
 
-        return Ok(prices.Select(p => (GetPricesByDofusIdResponse)p));
+        return Ok(prices.Select(p => (GetPricesByIdsResponse)p));
     }
 }
