@@ -28,7 +28,7 @@ FROM base-build AS test
 COPY --from=dependencies /root/.nuget /root/.nuget
 COPY --from=dependencies /root/.dotnet /root/.dotnet
 COPY --from=build /app ./
-RUN dotnet test -c Release --no-restore --no-build --logger --results-directory tests
+RUN dotnet test -c Release --no-restore --no-build --results-directory tests
 
 FROM base-build AS base-publish
 COPY --from=dependencies /root/.nuget /root/.nuget
