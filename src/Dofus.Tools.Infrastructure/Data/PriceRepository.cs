@@ -20,7 +20,7 @@ namespace Dofus.Tools.Infrastructure.Data
                 price);
         }
 
-        public async Task<Price[]> GetPricesByDofusId(long dofusId, short serverId, CancellationToken cancellationToken = default)
+        public async Task<Price[]> GetPricesByIds(long dofusId, short serverId, CancellationToken cancellationToken = default)
         {
             await using var connection = GetConnection();
             return (await connection.QueryAsync<Price>(
