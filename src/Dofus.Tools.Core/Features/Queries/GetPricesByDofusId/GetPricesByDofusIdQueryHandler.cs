@@ -14,5 +14,5 @@ public class GetPricesByDofusIdQueryHandler : IRequestHandler<GetPricesByDofusId
     }
 
     public Task<Price[]> Handle(GetPricesByDofusIdQuery request, CancellationToken cancellationToken)
-        => priceRepository.GetPricesByDofusId(request.DofusId, request.ServerId, cancellationToken);
+        => priceRepository.GetPricesByIds(request.DofusId, request.ServerId, cancellationToken);
 }
