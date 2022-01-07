@@ -11,10 +11,10 @@ services:
 
   db_migration:
     build:
+      context: .
       dockerfile: src/Dockerfile
       target: runtime-db-migration
     image: dofus-tools-api:latest-db-migration
-    entrypoint: tail -f /dev/null
     depends_on:
       - db
     env_file:
@@ -24,6 +24,7 @@ services:
 
   api:
     build:
+      context: .
       dockerfile: src/Dockerfile
       target: runtime
     image: dofus-tools-api:latest
