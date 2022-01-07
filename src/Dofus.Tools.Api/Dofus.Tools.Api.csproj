@@ -33,6 +33,10 @@
       <ProjectReference Include="..\Dofus.Tools.Infrastructure\Dofus.Tools.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Models\Prices" />
+    </ItemGroup>
+
     <PropertyGroup>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <NoWarn>$(NoWarn);1591</NoWarn>

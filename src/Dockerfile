@@ -42,7 +42,7 @@ RUN dotnet publish src/Dofus.Tools.DbMigration/Dofus.Tools.DbMigration.csproj --
 
 FROM base-runtime AS runtime-db-migration
 COPY --from=publish-db-migration /app/out ./
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT ["dotnet", "Dofus.Tools.DbMigration.dll"]
 
 FROM base-runtime AS runtime
 ENV ConnectionStrings__AppDatabase: "User ID =dofus-tools-api-dev;Password=password;Server=db;Port=5432;Database=dofus-tools;Pooling=true;"
