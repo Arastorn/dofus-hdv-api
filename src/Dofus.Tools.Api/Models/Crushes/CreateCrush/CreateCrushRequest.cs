@@ -4,4 +4,5 @@ public record CreateCrushRequest(
     long DofusId,
     short ServerId,
     long Value,
+    long EstimatedPriceValue,
     string CreatedBy);

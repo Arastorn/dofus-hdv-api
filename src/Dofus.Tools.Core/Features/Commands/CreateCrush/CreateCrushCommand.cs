@@ -6,4 +6,5 @@ public record CreateCrushCommand(
     long DofusId,
     short ServerId,
     long Value,
+    long EstimatedPriceValue,
     string CreatedBy) : IRequest;
