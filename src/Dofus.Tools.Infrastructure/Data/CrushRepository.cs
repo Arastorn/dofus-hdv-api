@@ -14,8 +14,8 @@ public class CrushRepository : BaseRepository, Core.Interfaces.CrushRepository
     {
         await using var connection = GetConnection();
         await connection.ExecuteScalarAsync(
-            @"INSERT INTO crushes(id, dofus_id, server_id, value, estimated_price_value, created_at, created_by) 
-                      VALUES (@id, @DofusId, @ServerId, @Value, @EstimatedPriceValue, @CreatedAt, @CreatedBy);",
+            @"INSERT INTO crushes(id, dofus_id, server_id, value, created_at, created_by) 
+                      VALUES (@id, @DofusId, @ServerId, @Value, @CreatedAt, @CreatedBy);",
             crush);
     }
 

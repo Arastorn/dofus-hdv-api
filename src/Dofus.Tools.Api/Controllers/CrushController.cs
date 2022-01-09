@@ -36,7 +36,6 @@ public class CrushController : ControllerBase
             request.DofusId,
             request.ServerId,
             request.Value,
-            request.EstimatedPriceValue,
             request.CreatedBy));
 
         return Ok();

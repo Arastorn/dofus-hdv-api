@@ -15,8 +15,8 @@ namespace Dofus.Tools.Infrastructure.Data
         {
             await using var connection = GetConnection();
             await connection.ExecuteScalarAsync(
-                @"INSERT INTO prices(id, dofus_id, server_id, value, created_at, created_by) 
-                      VALUES (@id, @DofusId, @ServerId, @Value, @CreatedAt, @CreatedBy);",
+                @"INSERT INTO prices(id, dofus_id, server_id, value, estimated_crush_value, created_at, created_by) 
+                      VALUES (@id, @DofusId, @ServerId, @Value, @EstimatedCrushValue, @CreatedAt, @CreatedBy);",
                 price);
         }
 

@@ -9,11 +9,12 @@ public class Price : IAggregateRoot
     {
     }
 
-    private Price(Guid id, long dofusId, short serverId, long value, Instant createdAt, string createdBy)
+    private Price(Guid id, long dofusId, short serverId, long value, long estimatedCrushValue,  Instant createdAt, string createdBy)
     {
         Id = id;
         DofusId = dofusId;
         Value = value;
+        EstimatedCrushValue = estimatedCrushValue;
         CreatedAt = createdAt;
         CreatedBy = createdBy;
         ServerId = serverId;
@@ -23,11 +24,12 @@ public class Price : IAggregateRoot
     public long DofusId { get; private set; }
     public short ServerId { get; private set; }
     public long Value { get; private set; }
+    public long EstimatedCrushValue { get; }
     public Instant CreatedAt { get; private set; }
     public string CreatedBy { get; private set; } = default!;
 
-    public static Price Create(long dofusId, short serverId, long value, Instant createdAt, string createdBy)
+    public static Price Create(long dofusId, short serverId, long value, long estimatedCrushValue, Instant createdAt, string createdBy)
     {
-        return new Price(Guid.NewGuid(), dofusId, serverId, value, createdAt, createdBy);
+        return new Price(Guid.NewGuid(), dofusId, serverId, value, estimatedCrushValue, createdAt, createdBy);
     }
 }

@@ -23,7 +23,6 @@ public class CreateCrushCommandHandler : IRequestHandler<CreateCrushCommand>
                 request.DofusId,
                 request.ServerId,
                 request.Value,
-                request.EstimatedPriceValue,
                 clock.GetCurrentInstant(),
                 request.CreatedBy),
             cancellationToken);

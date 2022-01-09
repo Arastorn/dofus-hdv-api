@@ -23,6 +23,7 @@ public class CreatePriceCommandHandler : IRequestHandler<CreatePriceCommand>
                 request.DofusId,
                 request.ServerId,
                 request.Value,
+                request.EstimatedCrushValue,
                 clock.GetCurrentInstant(),
                 request.CreatedBy),
             cancellationToken);

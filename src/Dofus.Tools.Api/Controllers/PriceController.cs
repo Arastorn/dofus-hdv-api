@@ -36,6 +36,7 @@ public class PriceController : ControllerBase
             request.DofusId,
             request.ServerId,
             request.Value,
+            request.EstimatedCrushValue,
             request.CreatedBy));
 
         return Ok();
